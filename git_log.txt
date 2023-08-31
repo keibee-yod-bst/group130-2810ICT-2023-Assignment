@@ -1,3 +1,9 @@
+commit b99c8abacc8be897c6e58c64e3962ff8906d9d1d
+Author: Kei <giliam.kei@gmail.com>
+Date:   Thu Aug 31 15:56:46 2023 +1000
+
+    Added git_log
+
 commit b2139c22c5feadbcee69e5e6e69eef5dbc9f4d3b
 Author: Kevin <136687484+2810ICT-7810ICT-Assignment@users.noreply.github.com>
 Date:   Tue Jul 18 18:24:09 2023 +1000
