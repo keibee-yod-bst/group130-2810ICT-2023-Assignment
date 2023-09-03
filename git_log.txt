@@ -1,3 +1,9 @@
+commit f11b4a2efac2592c86524030ae14d971fa3d91a8
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 13:39:36 2023 +1000
+
+    update Software Design system vision
+
 commit 2f2f9ecdd40a9b48055a6a5a17d0593a18aeda45
 Author: Kei <giliam.kei@gmail.com>
 Date:   Sun Sep 3 13:38:39 2023 +1000
