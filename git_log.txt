@@ -1,3 +1,27 @@
+commit b421449489259bbfc4b94a620630609bf84d563c
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 23:50:21 2023 +1000
+
+    visual design done
+
+commit 2d5ad2c1af80779b0e69a9c3fdce22ee6f14cf63
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sun Sep 3 22:29:56 2023 +1000
+
+    Updated gantt chart excel sheet
+
+commit cf43f0c73c4f7118b38d225182545f0ac1699085
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sun Sep 3 22:29:11 2023 +1000
+
+    Added gantt chart to 4.0
+
+commit d0ac9669996d7eef972c6f25c387b7b7f0b88cfd
+Author: Kei <127362302+keibee-yod-bst@users.noreply.github.com>
+Date:   Sun Sep 3 22:10:04 2023 +1000
+
+    Class Diagram.drawio
+
 commit e6c745124ad886852058e5c5bc6fbdb5c106361c
 Author: Kei <giliam.kei@gmail.com>
 Date:   Sun Sep 3 21:42:52 2023 +1000
