@@ -1,3 +1,27 @@
+commit 8647ae9c4e962580ac6eef7092d90f171a0ad953
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 11:56:22 2023 +1000
+
+    addint time log doc
+
+commit 45059588259b0e63a401fd94434f1a49822152d4
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 11:54:41 2023 +1000
+
+    adding team log
+
+commit 2de57cc76d63b775f476734a1156e3558048ccc8
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Sep 2 22:29:40 2023 +1000
+
+    update name on Project Plan & Software Design
+
+commit eff95f2aa7e3ade84edd4712003698d712b1f128
+Author: Kei <giliam.kei@gmail.com>
+Date:   Thu Aug 31 20:58:19 2023 +1000
+
+    commit3
+
 commit 6513302736efc4646c1b573824e642e3e5f129f7
 Author: Kei <giliam.kei@gmail.com>
 Date:   Thu Aug 31 20:56:02 2023 +1000
