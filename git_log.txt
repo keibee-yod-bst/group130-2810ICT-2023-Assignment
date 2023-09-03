@@ -1,3 +1,15 @@
+commit a81264896441a23b72d9706975aedd495ccbe3f1
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 21:33:41 2023 +1000
+
+    project plan intro done
+
+commit 60905e3e0053f28c47fc87c6871abbb0009d7285
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 20:45:07 2023 +1000
+
+    commit5
+
 commit aabf64fa99e582b6554637232af37dbc5befba5c
 Author: Eddie Thompson <eddiethompson1510@gmail.com>
 Date:   Sun Sep 3 20:35:30 2023 +1000
