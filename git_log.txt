@@ -1,3 +1,15 @@
+commit aabf64fa99e582b6554637232af37dbc5befba5c
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sun Sep 3 20:35:30 2023 +1000
+
+    Updated project plan document with 3.0 done
+
+commit f5235399f853885e1a714df88f023a2e419bd92b
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 13:48:36 2023 +1000
+
+    Project Plan Activity Definition
+
 commit f11b4a2efac2592c86524030ae14d971fa3d91a8
 Author: Kei <giliam.kei@gmail.com>
 Date:   Sun Sep 3 13:39:36 2023 +1000
