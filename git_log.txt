@@ -1,3 +1,27 @@
+commit 2f2f9ecdd40a9b48055a6a5a17d0593a18aeda45
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 13:38:39 2023 +1000
+
+    update Software Design system vision
+
+commit b09dbb787fe0a979a03a6c72397b99ec2a9fc99e
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 13:37:22 2023 +1000
+
+    update WBS
+
+commit 8f6d36932b7068c6d8e9d6ebc549f8375310df56
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 13:33:52 2023 +1000
+
+    update project plan intro
+
+commit 1a5e690109bdee6bd44c89587e7ac8495c127c4a
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 11:58:04 2023 +1000
+
+    commit 4
+
 commit 8647ae9c4e962580ac6eef7092d90f171a0ad953
 Author: Kei <giliam.kei@gmail.com>
 Date:   Sun Sep 3 11:56:22 2023 +1000
