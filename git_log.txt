@@ -1,3 +1,15 @@
+commit b227ccdf4fbed59bf7973c678051a8b0c177ad59
+Author: Kei <giliam.kei@gmail.com>
+Date:   Fri Sep 29 14:33:32 2023 +1000
+
+    group meeting
+
+commit 25bc40abc1c5bec1858d81f7279becf13d44e8d7
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Sep 3 23:57:35 2023 +1000
+
+    ready
+
 commit 18161c34bc168c08addc62c32116f2d9effdfa54
 Author: Kei <giliam.kei@gmail.com>
 Date:   Sun Sep 3 23:57:23 2023 +1000
