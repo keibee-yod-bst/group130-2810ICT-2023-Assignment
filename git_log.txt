@@ -1,8 +1,39 @@
+commit 75433b8b881f907a645922f5dbec308963cad272
+Author: Kei <giliam.kei@gmail.com>
+Date:   Fri Sep 29 15:48:48 2023 +1000
+
+    Jupyter notebook updated
+
+commit 26843b509991fd2d5ab7bf571c76a418197b09ad
+Merge: a408fd8 ca14fdd
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Sep 29 15:31:26 2023 +1000
+
+    Merge branch 'main' of https://github.com/keibee-yod-bst/group130-2810ICT-2023-Assignment
+
+commit a408fd89720e4e2959702a5e78da078238d56d80
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Sep 29 15:24:52 2023 +1000
+
+    Added Python Folder, Implimented File Reading
+
+commit ca14fdd146ea191bae0b197ea11f80fda967bbd9
+Author: Kei <giliam.kei@gmail.com>
+Date:   Fri Sep 29 15:15:52 2023 +1000
+
+    Crash Statistics Victoria.csv uploaded
+
 commit 65d0d5d8875ddf2d82aeb6ea5f0431803a0a5ff3
 Author: Kei <giliam.kei@gmail.com>
 Date:   Fri Sep 29 14:39:14 2023 +1000
 
     Crash Statistics Victoria.csv uploaded
+
+commit 001adbd3c207dfca7a25ff6eaeb01a8baf47c145
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Sep 29 14:36:51 2023 +1000
+
+    Added CSV File
 
 commit d2ada1f6d10dcaddf871eb909edcfec39d9b2687
 Author: Kei <giliam.kei@gmail.com>
