@@ -10,6 +10,20 @@ import wx.xrc
 import wx.adv
 import wx.grid
 
+# -*- coding: utf-8 -*-
+
+###########################################################################
+## Python code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
+## http://www.wxformbuilder.org/
+##
+## PLEASE DO *NOT* EDIT THIS FILE!
+###########################################################################
+
+import wx
+import wx.xrc
+import wx.adv
+import wx.grid
+
 ###########################################################################
 ## Class MyFrame1
 ###########################################################################
@@ -35,16 +49,16 @@ class MyFrame1 ( wx.Frame ):
 
 		wSizer2.Add( self.m_staticText1, 0, wx.ALL, 5 )
 
-		self.m_timePicker1 = wx.adv.TimePickerCtrl( self, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.DefaultSize, wx.adv.TP_DEFAULT )
-		wSizer2.Add( self.m_timePicker1, 0, wx.ALL, 5 )
+		self.m_datePicker2 = wx.adv.DatePickerCtrl( self, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.DefaultSize, wx.adv.DP_DEFAULT )
+		wSizer2.Add( self.m_datePicker2, 0, wx.ALL, 5 )
 
 		self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, u"End", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2.Wrap( -1 )
 
 		wSizer2.Add( self.m_staticText2, 0, wx.ALL, 5 )
 
-		self.m_timePicker2 = wx.adv.TimePickerCtrl( self, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.DefaultSize, wx.adv.TP_DEFAULT )
-		wSizer2.Add( self.m_timePicker2, 0, wx.ALL, 5 )
+		self.m_datePicker1 = wx.adv.DatePickerCtrl( self, wx.ID_ANY, wx.DefaultDateTime, wx.DefaultPosition, wx.DefaultSize, wx.adv.DP_DEFAULT )
+		wSizer2.Add( self.m_datePicker1, 0, wx.ALL, 5 )
 
 		m_choice1Choices = [ u"Monday", u"Tuesday", u"Wednesday", u"Thursday", u"Friday", u"Saturday", u"Sunday" ]
 		self.m_choice1 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_choice1Choices, 0 )
@@ -53,6 +67,9 @@ class MyFrame1 ( wx.Frame ):
 
 		self.m_checkBox1 = wx.CheckBox( self, wx.ID_ANY, u"Alcohol?", wx.DefaultPosition, wx.DefaultSize, 0 )
 		wSizer2.Add( self.m_checkBox1, 0, wx.ALL, 5 )
+
+		self.m_button1 = wx.Button( self, wx.ID_ANY, u"Apply", wx.DefaultPosition, wx.DefaultSize, 0 )
+		wSizer2.Add( self.m_button1, 0, wx.ALL, 5 )
 
 
 		bSizer1.Add( wSizer2, 1, wx.EXPAND, 5 )
@@ -84,7 +101,7 @@ class MyFrame1 ( wx.Frame ):
 
 		# Cell Defaults
 		self.m_grid4.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		bSizer1.Add( self.m_grid4, 10, wx.ALIGN_CENTER|wx.ALL, 5 )
+		bSizer1.Add( self.m_grid4, 10, wx.ALIGN_CENTER|wx.ALL|wx.EXPAND, 5 )
 
 
 		self.SetSizer( bSizer1 )
