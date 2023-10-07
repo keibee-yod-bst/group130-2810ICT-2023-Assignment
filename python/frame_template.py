@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 ## Python code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
 ## http://www.wxformbuilder.org/
@@ -19,7 +17,7 @@ import wx.grid
 class MyFrame1 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 626,365 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 1158,695 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -62,7 +60,7 @@ class MyFrame1 ( wx.Frame ):
 		self.m_grid4 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid4.CreateGrid( 200, 6 )
+		self.m_grid4.CreateGrid( 200, 5 )
 		self.m_grid4.EnableEditing( True )
 		self.m_grid4.EnableGridLines( True )
 		self.m_grid4.EnableDragGridSize( False )
@@ -71,6 +69,11 @@ class MyFrame1 ( wx.Frame ):
 		# Columns
 		self.m_grid4.EnableDragColMove( False )
 		self.m_grid4.EnableDragColSize( True )
+		self.m_grid4.SetColLabelValue( 0, u"AccidentID" )
+		self.m_grid4.SetColLabelValue( 1, u"Date" )
+		self.m_grid4.SetColLabelValue( 2, u"Time" )
+		self.m_grid4.SetColLabelValue( 3, u"Day" )
+		self.m_grid4.SetColLabelValue( 4, u"Alcohol" )
 		self.m_grid4.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
@@ -80,8 +83,8 @@ class MyFrame1 ( wx.Frame ):
 		# Label Appearance
 
 		# Cell Defaults
-		self.m_grid4.SetDefaultCellAlignment(wx.ALIGN_LEFT, wx.ALIGN_TOP)
-		bSizer1.Add(self.m_grid4, 10, wx.ALIGN_CENTER | wx.ALL, 5)
+		self.m_grid4.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer1.Add( self.m_grid4, 10, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 
 		self.SetSizer( bSizer1 )
