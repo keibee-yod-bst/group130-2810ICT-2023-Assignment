@@ -23,14 +23,31 @@ class GUIFrame(Myframe):
 
         self.display_data()
 
+        # events
         self.m_button1.Bind(wx.EVT_BUTTON, self.on_filter_button_click)
+        self.m_checkBox1.Bind(wx.EVT_CHECKBOX, self.on_checkbox_checked)
 
+    # day choice
     def on_filter_button_click(self, event):
         # Get the selected day of the week from the choice control
         selected_day = self.m_choice1.GetStringSelection()
 
         # Filter the DataFrame based on the selected day
         filtered_data = df[df['DAY_OF_WEEK'] == selected_day]
+
+        # Display the filtered data in the grid
+        self.display_filtered_data(filtered_data)
+
+    # alcohol related
+    def on_checkbox_checked(self, event):
+        # Check the state of the checkbox
+        is_checked = self.m_checkBox1.GetValue()
+
+        # Filter the DataFrame based on the checkbox state (ALCOHOL_RELATED == 'Yes' or 'No')
+        if is_checked:
+            filtered_data = df[df['ALCOHOL_RELATED'] == 'Yes']
+        else:
+            filtered_data = df[df['ALCOHOL_RELATED'] == 'No']
 
         # Display the filtered data in the grid
         self.display_filtered_data(filtered_data)
