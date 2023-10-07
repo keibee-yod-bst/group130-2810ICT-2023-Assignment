@@ -29,28 +29,13 @@ class GUIFrame(Myframe):
 
     # day choice
     def on_filter_button_click(self, event):
-        # Get the selected day of the week from the choice control
         selected_day = self.m_choice1.GetStringSelection()
-
-        # Filter the DataFrame based on the selected day
-        filtered_data = df[df['DAY_OF_WEEK'] == selected_day]
-
-        # Display the filtered data in the grid
+        filtered_data = df[accidentday == selected_day]
         self.display_filtered_data(filtered_data)
 
     # alcohol related
     def on_checkbox_checked(self, event):
-        # Check the state of the checkbox
         is_checked = self.m_checkBox1.GetValue()
-
-        # Filter the DataFrame based on the checkbox state (ALCOHOL_RELATED == 'Yes' or 'No')
-        if is_checked:
-            filtered_data = df[df['ALCOHOL_RELATED'] == 'Yes']
-        else:
-            filtered_data = df[df['ALCOHOL_RELATED'] == 'No']
-
-        # Display the filtered data in the grid
-        self.display_filtered_data(filtered_data)
 
     def display_data(self):
 
@@ -74,31 +59,35 @@ class GUIFrame(Myframe):
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
 
     def clear_grid(self):
-        # remove all rows from the grid
+        # remove rows
         self.grid.DeleteRows(0, self.grid.GetNumberRows())
 
     def display_filtered_data(self, data):
-        # Display the filtered data in the grid
+        # display filtered data
         self.display_data(data)
 
+    # event
     def on_filter_button_click(self, event):
-        # Get the selected day of the week from the choice control
+        # Get the selected day
         selected_day = self.m_choice1.GetStringSelection()
+        # Get the checkbox value
+        is_checked = self.m_checkBox1.GetValue()
 
-        # Filter the DataFrame based on the selected day
-        filtered_data = df[df['DAY_OF_WEEK'] == selected_day]
+        if is_checked:
+            filtered_data = df[(accidentday == selected_day) & (accidentalcohol == 'Yes')]
+        else:
+            filtered_data = df[(accidentday == selected_day) & (accidentalcohol == 'No')]
 
-        # Display the filtered data in the grid
+        # Display the filtered data
         self.display_filtered_data(filtered_data)
 
-        # Display the filtered data in your grid or another part of your GUI
-        self.display_filtered_data(filtered_data)
+
 
     def display_filtered_data(self, filtered_data):
         # Clear the existing data in the grid
         self.grid.ClearGrid()
 
-        # Display the filtered data in the grid
+        # display
         for row_index, (id, date, time, day, alcohol) in enumerate(
                 zip(filtered_data['OBJECTID'], filtered_data['ACCIDENT_DATE'],
                     filtered_data['ACCIDENT_TIME'], filtered_data['DAY_OF_WEEK'],
