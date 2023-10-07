@@ -7,14 +7,17 @@ accidentdate = df['ACCIDENT_DATE']
 accidenttime = df['ACCIDENT_TIME']
 accidentday = df['DAY_OF_WEEK']
 accidentalcohol = df['ALCOHOLTIME']
+
 class GUIFrame (Myframe):
-    def __init__(self):
-        super().__init__(None)
+    def __init__(self, parent):
+        super().__init__(parent)
         self.Show()
+
+
 
 if __name__ == "__main__":
     app = wx.App()
-    frame = wx.Frame(None, title="COOL PROGRAM")
+    frame = GUIFrame(None)
     frame.Show()
     app.MainLoop()
 

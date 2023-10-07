@@ -80,8 +80,8 @@ class MyFrame1 ( wx.Frame ):
 		# Label Appearance
 
 		# Cell Defaults
-		self.m_grid4.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		bSizer1.Add( self.m_grid4, 10, wx.ALIGN_CENTER|wx.ALL|wx.EXPAND, 5 )
+		self.m_grid4.SetDefaultCellAlignment(wx.ALIGN_LEFT, wx.ALIGN_TOP)
+		bSizer1.Add(self.m_grid4, 10, wx.ALIGN_CENTER | wx.ALL, 5)
 
 
 		self.SetSizer( bSizer1 )
