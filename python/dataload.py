@@ -82,30 +82,31 @@ class GUIFrame(Myframe):
         start_date = self.m_datePicker2.GetValue()
         end_date = self.m_datePicker1.GetValue()
 
-        # Extract day, month, and year components
+        # extract day, month, and year components
         start_day = start_date.GetDay()
-        start_month = start_date.GetMonth() + 1  # Month is 0-based, so add 1
+        start_month = start_date.GetMonth() + 1  # month is 0-based, so add 1
         start_year = start_date.GetYear()
 
         end_day = end_date.GetDay()
         end_month = end_date.GetMonth() + 1
         end_year = end_date.GetYear()
 
-        # Convert to DD/MM/YYYY format
+        # DD/MM/YYYY format
         start_date_str = f"{start_day:02d}/{start_month:02d}/{start_year}"
         end_date_str = f"{end_day:02d}/{end_month:02d}/{end_year}"
 
         selected_period = df[(df['ACCIDENT_DATE'] >= start_date_str) & (df['ACCIDENT_DATE'] <= end_date_str)]
 
+        # filter data
         if is_checked:
             filtered_data = selected_period[selected_period['ALCOHOL_RELATED'] == 'Yes']
         else:
             filtered_data = selected_period[selected_period['ALCOHOL_RELATED'] == 'No']
 
-        # Further filter by day
+        # further filter by day
         filtered_data = filtered_data[filtered_data['DAY_OF_WEEK'] == selected_day]
 
-        # Display the filtered data
+        # display the filtered data
         self.display_filtered_data(filtered_data)
 
     def display_filtered_data(self, filtered_data):
