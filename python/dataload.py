@@ -13,6 +13,8 @@ accidentdate = df['ACCIDENT_DATE']
 accidenttime = df['ACCIDENT_TIME']
 accidentday = df['DAY_OF_WEEK']
 accidentalcohol = df['ALCOHOL_RELATED']
+description = df['ACCIDENT_TYPE']
+
 
 
 class GUIFrame(Myframe):
@@ -37,24 +39,40 @@ class GUIFrame(Myframe):
         self.m_datePicker2.SetValue(wx.DateTime(min_date.day, min_date.month - 1, min_date.year))
         self.m_datePicker1.SetValue(wx.DateTime(max_date.day, max_date.month - 1, max_date.year))
 
+    # Search description
+    def on_search(self, event):
+        # Get the search keyword entered by the user
+        search_keyword = self.m_searchCtrl2.GetValue()
+
+        # Update the filtered data based on the search keyword
+        self.filtered_data = df[description.str.contains(search_keyword, case=False)]
+
+        # Apply other filters
+        self.filter_data()
 
     # alcohol related
     def on_checkbox_checked(self, event):
         is_checked = self.m_checkBox1.GetValue()
 
-    def display_data(self):
-
-        # reset the result
+    def display_data(self, search_keyword=None):
+        # Reset the grid
         self.clear_grid()
 
-        for row_index, (id, date, time, day, alcohol) in enumerate(
-                zip(accidentid, accidentdate, accidenttime, accidentday, accidentalcohol)):
+        # Filter data based on the search keyword (if provided)
+        if search_keyword:
+            filtered_data = df[df['ACCIDENT_TYPE'].str.contains(search_keyword, case=False)]
+        else:
+            filtered_data = df
+
+        for row_index, (id, date, time, day, alcohol, description) in enumerate(
+                zip(accidentid, accidentdate, accidenttime, accidentday, accidentalcohol, description)):
             if row_index < self.grid.GetNumberRows():
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
                 self.grid.SetCellValue(row_index, 1, date)
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
+                self.grid.SetCellValue(row_index, 5, str(description))
             else:
                 self.grid.AppendRows(1)
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
@@ -62,6 +80,7 @@ class GUIFrame(Myframe):
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
+                self.grid.SetCellValue(row_index, 5, str(description))
 
     def clear_grid(self):
         # remove rows
@@ -121,16 +140,17 @@ class GUIFrame(Myframe):
         self.grid.ClearGrid()
 
         # display
-        for row_index, (id, date, time, day, alcohol) in enumerate(
+        for row_index, (id, date, time, day, alcohol, description) in enumerate(
                 zip(filtered_data['OBJECTID'], filtered_data['ACCIDENT_DATE'],
                     filtered_data['ACCIDENT_TIME'], filtered_data['DAY_OF_WEEK'],
-                    filtered_data['ALCOHOL_RELATED'])):
+                    filtered_data['ALCOHOL_RELATED'], df['ACCIDENT_TYPE'])):
             if row_index < self.grid.GetNumberRows():
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
                 self.grid.SetCellValue(row_index, 1, date)
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
+                self.grid.SetCellValue(row_index, 5, str(description))
             else:
                 self.grid.AppendRows(1)
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
@@ -138,6 +158,7 @@ class GUIFrame(Myframe):
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
+                self.grid.SetCellValue(row_index, 5, str(description))
 
 
 if __name__ == "__main__":

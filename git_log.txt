@@ -1,3 +1,195 @@
+commit 25655e809685e6c97d920ce3e48c6edb769c852c
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Oct 8 23:42:45 2023 +1000
+
+    summary
+
+commit 64d43e67f94e797e4dc2cf8fac51c8b47916bfd7
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sun Oct 8 22:34:00 2023 +1000
+
+    Finished Gantt chart
+
+commit 98c2e53dbbc008d52a8c5bbf9d49c590d0d2b641
+Merge: 75025aa fe2b6ff
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Sun Oct 8 22:25:56 2023 +1000
+
+    Merge branch 'main' of https://github.com/keibee-yod-bst/group130-2810ICT-2023-Assignment
+
+commit 75025aaf151553137a928cc4d7274df3e94b319c
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Sun Oct 8 22:25:44 2023 +1000
+
+    Finished User Manual
+
+commit fe2b6ff0918b22d6cadb542feb7d6425f7bb0755
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sun Oct 8 22:20:41 2023 +1000
+
+    Finished testing report
+
+commit 2e10a0fa28a0780986b81ea862c30e3ea7ab6dca
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Oct 8 22:05:43 2023 +1000
+
+    dataloaded.py selected_period works
+
+commit 43b0fbb5ca2e08353656aa147f5b2021d6d8b8f7
+Merge: d2944b2 c48b07d
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Sun Oct 8 21:20:34 2023 +1000
+
+    Merge branch 'main' of https://github.com/keibee-yod-bst/group130-2810ICT-2023-Assignment
+
+commit d2944b20d75e416f66fc031225b014d0563e7420
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Sun Oct 8 21:20:14 2023 +1000
+
+    Updated Project Plan, begun work on User Manual.
+
+commit c48b07dda58d0d0e57e8088c9f0b9715535d7336
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Oct 8 21:01:39 2023 +1000
+
+    dataloaded.py selected_period is loaded but doesn't display the data
+
+commit 6b670a678ea2f2eeccc0b87c37bd02587a81d2de
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sun Oct 8 20:51:50 2023 +1000
+
+    dataloaded.py selected_period is loaded but doesn't display the data
+
+commit 591758fe986c4d0dba53b6b4bba4e5d91e5f760f
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Oct 7 20:42:22 2023 +1000
+
+    dataloaded.py ALCOHOL_RELATED, ACCIDENT_DATE work
+
+commit bb8521eef7293f67e4a5f37d977091ebf4a60ac0
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Oct 7 16:48:23 2023 +1000
+
+    dataloaded.py ALCOHOL_RELATED works
+
+commit 023c0e1b53243c9ed4f14081421bcc3f7a5c65a5
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Oct 7 16:34:09 2023 +1000
+
+    dataloaded.py day selection works
+
+commit 87992829a21a914caa13c3ddafde2821384d8e3d
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Oct 7 16:28:59 2023 +1000
+
+    dataloaded.py day selection works
+
+commit 7eb437822ad039d1731ef8acc14c4da17f44145f
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 14:15:23 2023 +1000
+
+    fixed error
+
+commit 9ba20dac7ab9841d758723b4c15b55fc20000a96
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 14:13:35 2023 +1000
+
+    Added date picker, added an apply button
+
+commit d74bf0f9cad11e27eb6c7f1125fc13c58c60f851
+Merge: f44c2cc 14808e3
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 13:25:45 2023 +1000
+
+    Merge branch 'main' of https://github.com/keibee-yod-bst/group130-2810ICT-2023-Assignment
+
+commit f44c2cc518a27d7f5fd8ef7e129e96d23600e4a3
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 13:25:11 2023 +1000
+
+    fixed the program to show the correct column headings
+
+commit 14808e3a54284110e10eb9d1f45d4fa14a5d89c5
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Oct 7 13:02:07 2023 +1000
+
+    conda activate numpyenv
+
+commit 6546598c6d31f8bb1153c8aa75c70cd9a5fafb3e
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 12:56:00 2023 +1000
+
+    got the python script to load the program
+
+commit 420752c556cd4ead3e3bf2ebd982e4ab08d91944
+Merge: b1ec400 ecd103b
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 12:52:22 2023 +1000
+
+    Merge branch 'main' of https://github.com/keibee-yod-bst/group130-2810ICT-2023-Assignment
+
+commit b1ec4001f5436c55babd5fe5257c484b96fe8312
+Author: Eddie Thompson <eddiethompson1510@gmail.com>
+Date:   Sat Oct 7 12:51:39 2023 +1000
+
+    got the python script to load the program
+
+commit ecd103be8267869a77951aae22da7fa4701eef42
+Author: Kei <giliam.kei@gmail.com>
+Date:   Sat Oct 7 11:46:51 2023 +1000
+
+    remote meeting
+
+commit 296523eea08608b86c4098f11d0a9f70a326bde5
+Merge: 0d6ce8b 55eb1dc
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Oct 6 15:53:12 2023 +1000
+
+    Merge branch 'main' of https://github.com/keibee-yod-bst/group130-2810ICT-2023-Assignment
+
+commit 0d6ce8b33b7937cb1a581d096902718a91b2e72f
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Oct 6 15:51:18 2023 +1000
+
+    Opens blank window now.
+
+commit 55eb1dc8f4fba961bb1f2013e982d7003a94e45e
+Merge: 08554c0 f15dec1
+Author: Kei <giliam.kei@gmail.com>
+Date:   Fri Oct 6 15:26:17 2023 +1000
+
+    test
+
+commit 08554c01fb5335a466e22b6cc3146caea320ac59
+Author: Kei <giliam.kei@gmail.com>
+Date:   Fri Oct 6 15:23:42 2023 +1000
+
+    testing
+
+commit 1db0099292d2d953430a778aab9a942bf4590d8a
+Author: Kei <giliam.kei@gmail.com>
+Date:   Fri Oct 6 15:17:15 2023 +1000
+
+    trying jupyter notebook
+
+commit f15dec1452740365435a79be0e4eb544391c1e7d
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Oct 6 15:04:10 2023 +1000
+
+    Now Running Python 3.8, wxPython installed
+
+commit 4852db8a21a88dff1f5c708fc6376ad18fcf6a69
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Oct 6 14:15:44 2023 +1000
+
+    Added more types of file loading
+
+commit 7ecf1909f3b7d543847d266fbe172e2b4b882d36
+Author: Fletcher <fletcherbradley123@outlook.com>
+Date:   Fri Oct 6 14:10:09 2023 +1000
+
+    Added GUI Design file
+
 commit 75433b8b881f907a645922f5dbec308963cad272
 Author: Kei <giliam.kei@gmail.com>
 Date:   Fri Sep 29 15:48:48 2023 +1000
