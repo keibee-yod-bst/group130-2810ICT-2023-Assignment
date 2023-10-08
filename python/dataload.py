@@ -84,7 +84,7 @@ class GUIFrame(Myframe):
 
         # extract day, month, and year components
         start_day = start_date.GetDay()
-        start_month = start_date.GetMonth() + 1  # month is 0-based, so add 1
+        start_month = start_date.GetMonth() + 1  # Month is 0-based, so add 1
         start_year = start_date.GetYear()
 
         end_day = end_date.GetDay()
@@ -92,12 +92,18 @@ class GUIFrame(Myframe):
         end_year = end_date.GetYear()
 
         # DD/MM/YYYY format
-        start_date_str = f"{start_day:02d}/{start_month:02d}/{start_year}"
-        end_date_str = f"{end_day:02d}/{end_month:02d}/{end_year}"
+        start_date_str = f"{start_day:02d}/{start_month:02d}/{start_year:04d}"
+        end_date_str = f"{end_day:02d}/{end_month:02d}/{end_year:04d}"
 
-        selected_period = df[(df['ACCIDENT_DATE'] >= start_date_str) & (df['ACCIDENT_DATE'] <= end_date_str)]
+        #print("Selected Start Date:", start_date_str)
+        #print("Selected End Date:", end_date_str)
 
-        # filter data
+        # filter the data for the selected period
+        selected_period = df[
+            (pd.to_datetime(df['ACCIDENT_DATE'], dayfirst=True) >= pd.to_datetime(start_date_str, dayfirst=True)) &
+            (pd.to_datetime(df['ACCIDENT_DATE'], dayfirst=True) <= pd.to_datetime(end_date_str, dayfirst=True))
+            ]
+
         if is_checked:
             filtered_data = selected_period[selected_period['ALCOHOL_RELATED'] == 'Yes']
         else:
@@ -108,6 +114,7 @@ class GUIFrame(Myframe):
 
         # display the filtered data
         self.display_filtered_data(filtered_data)
+
 
     def display_filtered_data(self, filtered_data):
         # Clear the existing data in the grid
