@@ -13,8 +13,6 @@ accidentdate = df['ACCIDENT_DATE']
 accidenttime = df['ACCIDENT_TIME']
 accidentday = df['DAY_OF_WEEK']
 accidentalcohol = df['ALCOHOL_RELATED']
-description = df['ACCIDENT_TYPE']
-
 
 
 class GUIFrame(Myframe):
@@ -39,40 +37,24 @@ class GUIFrame(Myframe):
         self.m_datePicker2.SetValue(wx.DateTime(min_date.day, min_date.month - 1, min_date.year))
         self.m_datePicker1.SetValue(wx.DateTime(max_date.day, max_date.month - 1, max_date.year))
 
-    # Search description
-    def on_search(self, event):
-        # Get the search keyword entered by the user
-        search_keyword = self.m_searchCtrl2.GetValue()
-
-        # Update the filtered data based on the search keyword
-        self.filtered_data = df[description.str.contains(search_keyword, case=False)]
-
-        # Apply other filters
-        self.filter_data()
 
     # alcohol related
     def on_checkbox_checked(self, event):
         is_checked = self.m_checkBox1.GetValue()
 
-    def display_data(self, search_keyword=None):
-        # Reset the grid
+    def display_data(self):
+
+        # reset the result
         self.clear_grid()
 
-        # Filter data based on the search keyword (if provided)
-        if search_keyword:
-            filtered_data = df[df['ACCIDENT_TYPE'].str.contains(search_keyword, case=False)]
-        else:
-            filtered_data = df
-
-        for row_index, (id, date, time, day, alcohol, description) in enumerate(
-                zip(accidentid, accidentdate, accidenttime, accidentday, accidentalcohol, description)):
+        for row_index, (id, date, time, day, alcohol) in enumerate(
+                zip(accidentid, accidentdate, accidenttime, accidentday, accidentalcohol)):
             if row_index < self.grid.GetNumberRows():
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
                 self.grid.SetCellValue(row_index, 1, date)
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
-                self.grid.SetCellValue(row_index, 5, str(description))
             else:
                 self.grid.AppendRows(1)
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
@@ -80,7 +62,6 @@ class GUIFrame(Myframe):
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
-                self.grid.SetCellValue(row_index, 5, str(description))
 
     def clear_grid(self):
         # remove rows
@@ -91,6 +72,7 @@ class GUIFrame(Myframe):
         self.display_data(data)
 
     # event
+
     def on_filter_button_click(self, event):
         # Get the selected day
         selected_day = self.m_choice1.GetStringSelection()
@@ -101,7 +83,7 @@ class GUIFrame(Myframe):
         start_date = self.m_datePicker2.GetValue()
         end_date = self.m_datePicker1.GetValue()
 
-        # extract day, month, and year components
+        # Extract day, month, and year components
         start_day = start_date.GetDay()
         start_month = start_date.GetMonth() + 1  # Month is 0-based, so add 1
         start_year = start_date.GetYear()
@@ -110,14 +92,15 @@ class GUIFrame(Myframe):
         end_month = end_date.GetMonth() + 1
         end_year = end_date.GetYear()
 
-        # DD/MM/YYYY format
+        # Convert to DD/MM/YYYY format
         start_date_str = f"{start_day:02d}/{start_month:02d}/{start_year:04d}"
         end_date_str = f"{end_day:02d}/{end_month:02d}/{end_year:04d}"
 
-        #print("Selected Start Date:", start_date_str)
-        #print("Selected End Date:", end_date_str)
+        # Debug: Print selected dates
+        print("Selected Start Date:", start_date_str)
+        print("Selected End Date:", end_date_str)
 
-        # filter the data for the selected period
+        # Filter the data for the selected date range
         selected_period = df[
             (pd.to_datetime(df['ACCIDENT_DATE'], dayfirst=True) >= pd.to_datetime(start_date_str, dayfirst=True)) &
             (pd.to_datetime(df['ACCIDENT_DATE'], dayfirst=True) <= pd.to_datetime(end_date_str, dayfirst=True))
@@ -128,10 +111,10 @@ class GUIFrame(Myframe):
         else:
             filtered_data = selected_period[selected_period['ALCOHOL_RELATED'] == 'No']
 
-        # further filter by day
+        # Further filter by day
         filtered_data = filtered_data[filtered_data['DAY_OF_WEEK'] == selected_day]
 
-        # display the filtered data
+        # Display the filtered data
         self.display_filtered_data(filtered_data)
 
 
@@ -140,17 +123,16 @@ class GUIFrame(Myframe):
         self.grid.ClearGrid()
 
         # display
-        for row_index, (id, date, time, day, alcohol, description) in enumerate(
+        for row_index, (id, date, time, day, alcohol) in enumerate(
                 zip(filtered_data['OBJECTID'], filtered_data['ACCIDENT_DATE'],
                     filtered_data['ACCIDENT_TIME'], filtered_data['DAY_OF_WEEK'],
-                    filtered_data['ALCOHOL_RELATED'], df['ACCIDENT_TYPE'])):
+                    filtered_data['ALCOHOL_RELATED'])):
             if row_index < self.grid.GetNumberRows():
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
                 self.grid.SetCellValue(row_index, 1, date)
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
-                self.grid.SetCellValue(row_index, 5, str(description))
             else:
                 self.grid.AppendRows(1)
                 self.grid.SetCellValue(row_index, 0, str(int(id)))
@@ -158,7 +140,6 @@ class GUIFrame(Myframe):
                 self.grid.SetCellValue(row_index, 2, time)
                 self.grid.SetCellValue(row_index, 3, str(day))
                 self.grid.SetCellValue(row_index, 4, str(alcohol))
-                self.grid.SetCellValue(row_index, 5, str(description))
 
 
 if __name__ == "__main__":
