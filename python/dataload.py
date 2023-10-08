@@ -14,6 +14,7 @@ accidenttime = df['ACCIDENT_TIME']
 accidentday = df['DAY_OF_WEEK']
 accidentalcohol = df['ALCOHOL_RELATED']
 
+
 class GUIFrame(Myframe):
     def __init__(self, parent):
         super().__init__(parent)
@@ -21,17 +22,21 @@ class GUIFrame(Myframe):
 
         self.grid = self.m_grid4
 
+        # min & max date
+        min_date = pd.to_datetime(df['ACCIDENT_DATE'], dayfirst=True).min()
+        max_date = pd.to_datetime(df['ACCIDENT_DATE'], dayfirst=True).max()
+
+
         self.display_data()
 
         # events
         self.m_button1.Bind(wx.EVT_BUTTON, self.on_filter_button_click)
         self.m_checkBox1.Bind(wx.EVT_CHECKBOX, self.on_checkbox_checked)
 
-    # day choice
-    def on_filter_button_click(self, event):
-        selected_day = self.m_choice1.GetStringSelection()
-        filtered_data = df[accidentday == selected_day]
-        self.display_filtered_data(filtered_data)
+        # original date on wxDatePicker (min & max)
+        self.m_datePicker2.SetValue(wx.DateTime(min_date.day, min_date.month - 1, min_date.year))
+        self.m_datePicker1.SetValue(wx.DateTime(max_date.day, max_date.month - 1, max_date.year))
+
 
     # alcohol related
     def on_checkbox_checked(self, event):
@@ -73,15 +78,35 @@ class GUIFrame(Myframe):
         # Get the checkbox value
         is_checked = self.m_checkBox1.GetValue()
 
+        # Get period
+        start_date = self.m_datePicker2.GetValue()
+        end_date = self.m_datePicker1.GetValue()
+
+        # Extract day, month, and year components
+        start_day = start_date.GetDay()
+        start_month = start_date.GetMonth() + 1  # Month is 0-based, so add 1
+        start_year = start_date.GetYear()
+
+        end_day = end_date.GetDay()
+        end_month = end_date.GetMonth() + 1
+        end_year = end_date.GetYear()
+
+        # Convert to DD/MM/YYYY format
+        start_date_str = f"{start_day:02d}/{start_month:02d}/{start_year}"
+        end_date_str = f"{end_day:02d}/{end_month:02d}/{end_year}"
+
+        selected_period = df[(df['ACCIDENT_DATE'] >= start_date_str) & (df['ACCIDENT_DATE'] <= end_date_str)]
+
         if is_checked:
-            filtered_data = df[(accidentday == selected_day) & (accidentalcohol == 'Yes')]
+            filtered_data = selected_period[selected_period['ALCOHOL_RELATED'] == 'Yes']
         else:
-            filtered_data = df[(accidentday == selected_day) & (accidentalcohol == 'No')]
+            filtered_data = selected_period[selected_period['ALCOHOL_RELATED'] == 'No']
+
+        # Further filter by day
+        filtered_data = filtered_data[filtered_data['DAY_OF_WEEK'] == selected_day]
 
         # Display the filtered data
         self.display_filtered_data(filtered_data)
-
-
 
     def display_filtered_data(self, filtered_data):
         # Clear the existing data in the grid
@@ -112,4 +137,3 @@ if __name__ == "__main__":
     frame = GUIFrame(None)
     frame.Show()
     app.MainLoop()
-
